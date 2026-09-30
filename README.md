@@ -1,6 +1,6 @@
 # EsAn Yogalayam — Website
 
-Official website for **EsAn Yogalayam**, a yoga institution founded in 2018 by Master U. Ayyampillai.
+Official website for **EsAn Yogalayam**, a yoga institution founded in 2018 by Master U. Ayyampillai, M.Sc Yoga.
 
 Static site — plain HTML, CSS and JavaScript. No build step, no dependencies.
 
