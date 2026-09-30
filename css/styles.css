@@ -303,7 +303,6 @@ strong { font-weight: 600; color: var(--green-900); }
   display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
   color: var(--green-900); background: var(--green-100); padding: .45rem .85rem; border-radius: 999px;
 }
-.founder-cred span:first-child { background: var(--saffron); color: var(--green-950); }
 
 .founder-achievements { margin-top: 2rem; padding: 1.6rem 1.7rem; background: var(--white); border-radius: var(--radius); border: 1px solid rgba(15, 42, 31, .06); box-shadow: var(--shadow-sm); }
 .founder-achievements h4 { font-family: var(--font-body); font-size: .78rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--saffron-600); margin: 0 0 1rem; }
