@@ -257,9 +257,51 @@ strong { font-weight: 600; color: var(--green-900); }
 .story-facts dd { margin: 0; font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; color: var(--green-900); }
 
 /* ==========================================================================
+   The Master (founder)
+   ========================================================================== */
+.founder { background: var(--sand-50); }
+.founder-grid { display: grid; gap: 3rem; align-items: center; }
+@media (min-width: 960px) { .founder-grid { grid-template-columns: 6fr 6fr; gap: 5rem; } }
+
+.founder-photos {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start;
+  padding: 1.5rem 0;
+}
+.founder-photo { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); background: var(--sand-200); }
+.founder-photo img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 720 / 1280; }
+.founder-photo--a { transform: translateY(-1.5rem); }
+.founder-photo--b { transform: translateY(1.5rem); }
+.founder-caption {
+  grid-column: 1 / -1; margin-top: 2.5rem; font-size: .78rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--ink-mute); font-weight: 600;
+}
+@media (min-width: 960px) {
+  .founder-photos { gap: 1.4rem; padding: 2.5rem 0; }
+  .founder-photo--a { transform: translateY(-2.5rem); }
+  .founder-photo--b { transform: translateY(2.5rem); }
+  .founder-caption { margin-top: 3.5rem; }
+}
+
+.founder-copy p { color: var(--ink-soft); }
+.founder-cred {
+  display: flex; flex-wrap: wrap; gap: .6rem; margin: -.4rem 0 1.6rem;
+}
+.founder-cred span {
+  display: inline-block; font-size: .78rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--green-900); background: var(--green-100); padding: .45rem .85rem; border-radius: 999px;
+}
+.founder-cred span:first-child { background: var(--saffron); color: var(--green-950); }
+.founder-points { list-style: none; margin: 1.6rem 0 0; padding: 0; display: grid; gap: .75rem; }
+.founder-points li { position: relative; padding-left: 1.6rem; color: var(--ink-soft); font-size: .98rem; }
+.founder-points li::before {
+  content: ""; position: absolute; left: 0; top: .62em; width: 10px; height: 10px; border-radius: 50%;
+  background: var(--saffron);
+}
+
+/* ==========================================================================
    Principles strip
    ========================================================================== */
-.principles { padding: 0; background: var(--white); }
+.principles { padding: 0; background: var(--sand-50); }
 .principles-strip {
   display: grid; gap: 1px; background: var(--sand-200); border: 1px solid var(--sand-200); border-radius: var(--radius); overflow: hidden;
   transform: translateY(50%); margin-top: -3rem; box-shadow: var(--shadow-md);
