@@ -10,7 +10,7 @@ Static site — plain HTML, CSS and JavaScript. No build step, no dependencies.
 index.html         — single-page site (story, training, schedule, achievements, service, IDY, vision, contact)
 css/styles.css     — design system + all section styles
 js/main.js         — sticky header, mobile nav, scroll reveal, stat counters, enquiry form
-assets/favicon.svg — lotus mark
+assets/            — logo (original JPEG, transparent PNG mark + full lock-up, favicons)
 ```
 
 ## Run locally
