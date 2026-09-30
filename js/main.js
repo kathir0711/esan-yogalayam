@@ -96,6 +96,55 @@
     counters.forEach(function (c) { countObserver.observe(c); });
   }
 
+
+  /* ---------- Lightbox ---------- */
+  var lightbox = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  var lbCap = document.getElementById('lightbox-caption');
+  var photos = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
+  var current = -1;
+  var lastFocus = null;
+
+  function showPhoto(i) {
+    if (!photos.length) return;
+    current = (i + photos.length) % photos.length;
+    var el = photos[current];
+    lbImg.src = el.currentSrc || el.src;
+    lbImg.alt = el.alt || '';
+    lbCap.textContent = el.alt || '';
+  }
+  function openLightbox(i) {
+    lastFocus = document.activeElement;
+    showPhoto(i);
+    lightbox.hidden = false;
+    document.body.classList.add('lightbox-open');
+    document.getElementById('lightbox-close').focus();
+  }
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.classList.remove('lightbox-open');
+    lbImg.src = '';
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  if (lightbox && photos.length) {
+    photos.forEach(function (el, i) {
+      el.setAttribute('tabindex', '0');
+      el.setAttribute('role', 'button');
+      el.addEventListener('click', function () { openLightbox(i); });
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(i); } });
+    });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    document.getElementById('lightbox-prev').addEventListener('click', function () { showPhoto(current - 1); });
+    document.getElementById('lightbox-next').addEventListener('click', function () { showPhoto(current + 1); });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', function (e) {
+      if (lightbox.hidden) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') showPhoto(current - 1);
+      else if (e.key === 'ArrowRight') showPhoto(current + 1);
+    });
+  }
+
   /* ---------- Contact form (client-side only) ----------
      There is no backend. The form validates and opens a pre-filled
      WhatsApp / mail link so the enquiry reaches the institution.
