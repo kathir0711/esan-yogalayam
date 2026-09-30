@@ -99,8 +99,8 @@
   /* ---------- Contact form (client-side only) ----------
      There is no backend. The form validates and opens a pre-filled
      WhatsApp / mail link so the enquiry reaches the institution.
-     Update CONTACT_PHONE (digits only, with country code) once known. */
-  var CONTACT_PHONE = '910000000000';
+     CONTACT_PHONE is digits only, with country code. */
+  var CONTACT_PHONE = '916374005905';
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
 

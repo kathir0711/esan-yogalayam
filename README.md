@@ -25,11 +25,6 @@ python3 -m http.server 8000
 
 Hosted on GitHub Pages from the `main` branch (root). Any push to `main` redeploys.
 
-## Before going live — update these placeholders
+## Contact details
 
-The description did not include contact details. Replace them in two places:
-
-1. `index.html` — every element marked `data-placeholder` in the Contact section (phone, email, address).
-2. `js/main.js` — `CONTACT_PHONE` (digits only, with country code) so the enquiry form opens WhatsApp to the right number.
-
-Photos of classes, the founder and International Yoga Day programmes would strengthen the Story, Achievements and IDY sections; the layout is ready to take images.
+Phone, email and address live in the Contact section of `index.html`. The enquiry form has no backend; it opens WhatsApp to `CONTACT_PHONE` in `js/main.js` (digits only, with country code). Update both places if the number changes.
